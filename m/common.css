@@ -1,0 +1,510 @@
+@charset "utf-8";
+/* 기본스타일 3가지(폰트, 색상, 링크) */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Noto+Sans+KR:wght@100..900&display=swap');
+
+:root{
+  --txt_color01: #333;
+  --main_color01: #E41937;
+  --main_color02: #211613;
+  --sub_color01: #FAF9F9;
+  --sub_color02: #7E6D6C;
+  --sub_color03: #6A1820;
+  --font_size6: 6px;
+  --font_size8: 8px;
+  --font_size12: 12px;
+  --font_size14: 14px;
+  --font_size16: 16px;
+  --font_size18: 18px;
+  --font_size20: 20px;
+  --font_size26: 26px;
+  --font_weight6: 600;
+  --font_weight7: 700;
+  --sub_font: "Nanum Myeongjo", serif;
+}
+a{color: #333; text-decoration: none;}
+html{scroll-behavior: smooth;}
+/* 공용 레이아웃 */
+.login_wrap, #pascucci_menu, .golden_wrap, .event_wrap, .store_sea, .footer_wrap{width: 95%; margin: 0 auto;}
+.c_title{
+  font-size: var(--font_size26);
+  text-align: center;
+  padding-top: 50px;
+}
+.sub_txt{
+  font-family: var(--sub_font);
+  font-size: var(--font_size18);
+  padding-top: 12px;
+  text-align: center;
+}
+/* mobile header */
+header{
+  width: 100%; height: 70px;
+  background-color: var(--main_color02);
+  position: relative;
+}
+header > h1 img{
+  width: 200px;
+  padding: 14px 10px;
+}
+/* 토글버튼 */
+.total_btn{
+  position: absolute;
+  right: 12px; top: 15px;
+}
+.search_btn{
+  position: absolute;
+  right: 60px; top: 15px;
+}
+.fa-bars, .fa-times, .fa-search{font-size: 36px; color: var(--sub_color01); cursor: pointer;}
+
+/* 더보기 */
+.more_btn a{
+  display: block; 
+  width: 130px; height: 32px; margin: 20px auto;  
+  border: 1px solid var(--main_color02);
+  box-sizing: border-box;
+  color: var(--main_color02);
+  font-size: var(--font_size14);
+  line-height: 32px;
+  text-align: center;
+}
+.more_btn a:hover{
+  border: none;
+  background-color: var(--main_color01);
+  color: var(--sub_color01);
+}
+/* top버튼 */
+#top_btn{
+  width: 40px; height: 40px;
+  background-color: #fff;
+  border: 1px solid var(--main_color01);
+  border-radius: 50%;
+  position: fixed; bottom: 65px; right: 1%;
+  z-index: 888;
+  opacity: 0;
+}
+#top_btn a{
+  display: block;
+  width: 40px; height: 40px;
+  font-size: var(--font_size18);
+  line-height: 40px;
+  color: var(--main_color01);
+  transform: translateX(13px);
+}
+#top_btn:hover{background-color: var(--main_color02); border: none;}
+#top_btn.visible{opacity: 1; transition: 0.5s;}
+
+/* swiper 디자인 */
+.swiper-button-next, .swiper-button-prev{color: var(--main_color01);}
+.swiper-pagination{color: #ccc;}
+.swiper-pagination > span{background-color: var(--main_color01)}
+
+/* ////////////////gnb 메뉴 서식/////////// */
+#toggle, #toggle2{display: none;}
+.gnb{
+  width: 100%; height: 100%;
+  position: fixed; top: 0; left: 100%;
+  background-color: rgba(0,0,0,.7);
+  padding-left: 30%;
+  z-index: 999;
+}
+.nav_t, .total_gnb, .nav_b{
+  width: 100%;
+  color: var(--sub_color01);
+  background-color: var(--main_color02);
+  padding-left: 5%;
+  position: relative;
+}
+/* 탑메뉴 */
+.nav_t{
+  height:200px; 
+  border-bottom: 1px solid var(--sub_color01);
+}
+.nav_t .fa-times{
+  position: absolute; 
+  top: 15px; right: 40%;
+}
+.nav_t p{
+  width: 200px;
+  font-size: var(--font_size16);
+  text-align: left;
+  position: absolute; top: 50px;
+}
+.nav_t .my_menu{
+  padding-top: 90px;
+}
+.nav_t .my_menu ul{
+  display: flex;
+  padding-top: 10px;
+}
+.nav_t .my_menu ul li{
+  margin: 0 10px;
+}
+.nav_t .my_menu ul li:first-child{
+  margin-left: 0;
+}
+.nav_t .my_menu ul li div{
+  width: 50px; height: 50px;
+  border-radius: 50%;
+  background-color: var(--sub_color01);
+  position: relative;
+}
+.nav_t .my_menu ul li div i{
+  font-size: var(--font_size20);
+  line-height: 50px;
+  position: absolute;
+  left: 50%; transform: translateX(-50%);
+}
+.nav_t .my_menu ul li div a{
+  display: block;
+}
+.nav_t .my_menu ul li p{
+  font-size: var(--font_size12);
+  font-weight: var(--font_weight6);
+  color: var(--sub_color01);
+  padding-top: 110px;
+}
+/* 중간 메뉴 */
+.total_gnb{
+  padding-top: 1%;
+  height: 440px;
+}
+.total_gnb > li > a{color: var(--main_color01);}
+.total_gnb a{
+  color: var(--sub_color01);
+  display: block;
+}
+.total_gnb > li{
+  font-size: var(--font_size20);
+  line-height: 50px;
+}
+.total_gnb > li:hover #sub{display: block;}
+#sub{
+  font-size: var(--font_size16);
+  line-height: 30px;
+  display: none;
+}
+/* 하단 gnb */
+.nav_b{
+  height: 100%;
+  position: relative;
+}
+.nav_b ul{
+  display: flex;
+  position: absolute; right: 40%;
+}
+.nav_b ul li{
+  padding: 0 10px;
+}
+.nav_b ul li:last-child{
+  transform: translateY(-10px);
+}
+.nav_b ul li a{color: #fff;}
+.nav_b h2 img{
+  width: 200px; 
+  position: absolute; right: 40%;
+  padding-top: 12px;
+}
+/* gnb토글 */
+#toggle:checked + header.gnb{}
+
+/* 검색창 */
+.search{
+  width: 100%; height: 100%;
+  position: fixed; top: 100%;
+  background-color: var(--main_color02)
+}
+.search .fa-times{
+  position: absolute;
+  right: 10%; top: 5%;
+}
+.search_wrap{width: 80%; margin: 0 auto;}
+/* 검색 */
+.search #search_box{padding: 100px 0 0 8px;}
+.search #search_box > input{
+  width: 100%; height: 30px;
+  background-color: var(--main_color01);
+  border-radius: 26px;
+  border: none;
+  color: var(--sub_color01);
+}
+.search #search_box > input::placeholder{
+  color: var(--sub_color01);
+  padding-left: 8px;
+}
+.search #search_box > label{position: relative;}
+.search #search_box > label > i.fa-search{
+  color: var(--sub_color01);
+  font-size: var(--font_size14);
+  position: absolute;
+  left: -28px; top: 8px;
+}
+.search_tag{
+  padding-top: 14px;
+  font-size: var(--font_size16);
+  color: var(--sub_color01);
+  text-align: center;
+}
+/* 검색 토글 */
+#toggle2:checked .search{top: 0;}
+
+/* //////////////main//////////////// */
+.main_visual{
+  width: 100%;
+  height: 430px;
+}
+.main_visual .swiper {
+  width: 100%;
+  height: 100%;
+}
+.main_visual .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main_visual .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+/* slide img */
+.main_visual .slide_01, .main_visual .slide_02, .main_visual .slide_03{
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.main_visual .slide_01{
+  background-image: url(../images/main_slide01.jpg);
+}
+.main_visual .slide_02{
+  background-image: url(../images/main_slide02.jpg);
+}
+.main_visual .slide_03{
+  background-image: url(../images/main_slide03.jpg);
+}
+/* slide text */
+.text{
+  width: 60%; line-height: 28px;
+  font-size: var(--font_size16);
+  color: var(--sub_color01);
+  font-family: var(--sub_font);
+}
+
+/* 2. 로그인/회원가입 */
+.login{background-color: var(--main_color01); padding: 10px 0; color: var(--sub_color01);}
+.login_wrap p:first-child{
+  font-size: var(--font_size12);
+}
+.login_wrap p:nth-child(2){
+  font-size: var(--font_size18);
+  padding-top: 8px;
+}
+
+/* 3. 파스쿠찌 메뉴 */
+.tab_menu{text-align: center;}
+/* 탭버튼 디자인 */
+#pascucci_menu .menu_btn{
+  display: inline-block;
+  width: 100px;
+  margin: 20px 10px;
+  padding: 8px 0;
+  font-size: var(--font_size16);
+  background-color: var(--main_color02);
+  color: var(--sub_color01);
+  border-radius: 20px;
+  cursor: pointer;
+  text-align: center;
+}
+#pascucci_menu input[type=radio]{display: none;}
+#pascucci_menu input[type=radio]:checked + label{
+  background-color: var(--main_color01);
+}
+.season_m, .hit_m{
+  width: 95%; height: auto; display: none; margin: 0 auto;
+}
+#tab_01:checked ~ .season_m{display: block;}
+#tab_02:checked ~ .hit_m{display: block;}
+
+/* 시즌메뉴&인기메뉴 리스트 서식 */
+.m_img{width: 100%;}
+.menu_t{font-size: 0.8rem; line-height: 32px; text-align: center;}
+.price{font-size: 1.2rem; font-weight: var(--font_weight6); text-align: center; padding-bottom: 30px;}
+
+/* 시즌메뉴 슬라이드 */
+.season_m .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.season_m .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.season_m .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 인기메뉴 슬라이드 */
+.hit_m .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.hit_m .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hit_m .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 4. 커피원두 */
+.golden{background-color: #efefef; padding-bottom: 50px;}
+.coffee{
+  display: flex;
+  justify-content: center;
+  margin-top: 2%;
+}
+.coffee .img_box{
+  width: 180px;
+  position: relative;
+}
+.coffee .img_box::after{
+  display: block;
+  content: "";
+  padding-bottom: 100%;
+}
+.coffee .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.coffee .coffee_txt{
+  padding: 3%;
+}
+.coffee .coffee_txt h5{
+  font-size: var(--font_size18);
+}
+.coffee .coffee_txt p{
+  font-size: var(--font_size16);
+  font-family: var(--sub_font);
+  padding-top: 20px;
+}
+
+.tast{display: flex; justify-content: center; margin-top: 30px;}
+.tast ul{display: flex; padding-right: 20px;}
+.tast ul li{
+  font-size: var(--font_size16);
+}
+.tast ul li img{width: 10px; height: 10px;}
+
+/* 5. 이벤트 */
+#event{}
+#event .event_cont ul{
+  display: flex;
+  margin-top: 20px;
+  padding-bottom: 30px;
+  justify-content: center;
+}
+#event .event_cont li{
+  width: 30%;
+  padding: 0 10px;
+}
+/* 이벤트 슬라이드 */
+#event .swiper {
+  width: 100%;
+  height: 100%;
+}
+#event .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#event .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 5. 매장찾기 */
+.store_sear{padding-bottom: 80px;}
+/* 검색 */
+.store_sear .search_wrap{
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+.store_sear #local{
+  width: 20%;
+  background-color: #fff;
+  border: 1px solid var(--sub_color02);
+  color: var(--sub_color02);
+  margin-right: 3%;
+}
+.store_sear #search_box2{
+  width: 70%; height: 30px;
+}
+.store_sear #search_box2 > input{
+  width: 100%; height: 30px;
+  background-color: var(--main_color01);
+  border-radius: 26px;
+  border: none;
+  color: var(--sub_color01);
+  text-indent: 20px;
+}
+.store_sear #search_box2 > label{position: relative;}
+.store_sear #search_box2 > label > i.fa-search{
+  color: var(--sub_color01);
+  font-size: var(--font_size14);
+  position: absolute;
+  left: -28px; top: 8px;
+}
+
+/* footer */
+footer{
+  width: 100%; height: 60px;
+  background-color: var(--main_color02);
+  position: fixed; bottom: 0px; z-index: 777;
+}
+.footer_wrap ul{
+  display: flex;
+  justify-content: center;
+}
+.footer_wrap ul li{
+  width: 25%;
+  line-height: 60px;
+}
+.footer_wrap a{
+  color: var(--sub_color01);
+  font-size: 30px;
+  display: block;
+  text-align: center;
+}

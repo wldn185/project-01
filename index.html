@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>파스쿠찌</title>
+  <!-- 파비콘 -->
+  <link rel="shortcut icon" type="image/x-icon" href="./images/파비콘.png">
+  <!-- 폰트어썸 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <!-- 스와이퍼 -->
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <!-- 1. 초기화 -->
+  <link rel="stylesheet" href="./css/reset.css" type="text/css">
+  <!-- 2. 공통서식 -->
+  <link rel="stylesheet" href="./css/common.css" type="text/css">
+  <!-- 3. 메인서식 -->
+  <link rel="stylesheet" href="./css/main.css" type="text/css">
+    <!-- 사용자가 현재 페이지에 접속을 하면 접속한 디바이스기기를 체크하여 모바일, 태블릿일 경우 모바일 페이지로 이동 -->
+  <script>
+    //사용자가 접속한 디바이스 기기 체크하기
+    let mobile_keys = new Array('iPhone' ,'iPad', 'Android', 'BlackBerry', 'WindowsPhone', 'Window CE', 'LG', 'MOT', 'SAMSUNG', 'SonyErisson', 'Nokia');
+    //만약에 웹페이지 주소뒤에 move_pc_screen값이 null값이라면(없다면)
+    if(document.URL.match('move_pc_screen')) mobile_keys=null;
+
+    //위 배열값 개수만큼 반복하여 검사르 하고 모바일 사용자이면 아래 내용을 실행
+    for(i in mobile_keys){
+      //URL파라미터에 'move_pc_screen'가 포함되어 있지 않을 때 아래 내용 적용
+      if(navigator.userAgent.match(mobile_keys[i]) !=null){
+        location.href='http://wldn185.dothome.co.kr/m/index.html'; //모바일로 연결하라
+        break; //더이상 실행안함.
+      }
+    }
+  </script>
+</head>
+<body>
+  <!-- 헤더영역 시작 -->
+  <header id="header">
+    <div class="h_top">
+      <ul>
+        <li><a href="#none" title="인스타그램 바로가기"><i class="fa-brands fa-instagram"></i></a></li>
+        <li><a href="#none" title="유튜브 바로가기"><i class="fa-brands fa-youtube"></i></a></li>
+        <li><a href="#none" title="해피포인트 바로가기"><img src="./images/ico_happycon.png" alt="해피포인트" class="happy_con"></a></li>
+      </ul>
+    </div>
+
+    <div id="h_bottom">
+      <h1>
+        <a href="index.html" title="메인페이지로 바로가기">
+          <img src="./images/logo.png" alt="상단로고">
+        </a>
+      </h1>
+
+      <nav id="gnb">
+        <ul>
+          <li><a href="#none" title="ESPRESSO BAR">ESPRESSO BAR</a>
+            <ul class="sub">
+              <li><a href="#none" title="ESPRESSO BAR">ESPRESSO BAR</a></li>
+              <li><a href="#none" title="CENTRO">CENTRO</a></li>
+            </ul>
+          </li>
+          <li><a href="#none" title="PASCUCCI">PASCUCCI</a>
+            <ul class="sub">
+              <li><a href="#none" title="브랜드 소개">브랜드 소개</a></li>
+              <li><a href="#none" title="커피 & 컬처">커피 & 컬처</a></li>
+            </ul>
+          </li>
+          <li><a href="#none" title="MENU">MENU</a>
+            <ul class="sub">
+              <li><a href="#none" title="COFFEE">COFFEE</a></li>
+              <li><a href="#none" title="BEVERAGE">BEVERAGE</a></li>
+              <li><a href="#none" title="GELATO">GELATO</a></li>
+              <li><a href="#none" title="FOOD">FOOD</a></li>
+              <li><a href="#none" title="MD">MD</a></li>
+            </ul>
+          </li>
+          <li><a href="#none" title="NEWS">NEWS</a>
+            <ul class="sub">
+              <li><a href="#none" title="공지사항">공지사항</a></li>
+              <li><a href="#none" title="이벤트">이벤트</a></li>
+              <li><a href="#none" title="파스쿠찌TALK">파스쿠찌TALK</a></li>
+              <li><a href="#none" title="홍보센터">홍보센터</a></li>
+            </ul>
+          </li>
+          <li><a href="#none" title="CUSTOMER">CUSTOMER</a>
+            <ul class="sub">
+              <li><a href="#none" title="제휴안내">제휴안내</a></li>
+              <li><a href="#none" title="자주하는 질문">자주하는 질문</a></li>
+              <li><a href="#none" title="1:1 문의">1:1 문의</a></li>
+              <li><a href="#none" title="가맹사업안내">가맹사업안내</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <fieldset id="search_box">
+        <input type="search" placeholder="오늘의 행사" id="search">
+        <label for="search"><i class="fas fa-search"></i></label>
+      </fieldset>
+
+      <nav class="gnb_etc">
+        <ul>
+          <li><a href="#none" title="마이페이지 바로가기"><i class="fa-solid fa-user"></i></a></li>
+          <li>
+            <select name="lang" id="lang">
+              <option value="KOREAN">KOREAN</option>
+              <option value="ENGLISH">ENGLISH</option>
+              <option value="CHINESE">CHINESE</option>
+              <option value="JAPANESE">JAPANESE</option>
+            </select>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 메인영역 시작 -->
+  <main>
+    <!-- 1. 메인 슬라이드 -->
+    <div class="main_visual">
+      <!-- Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide slide_01">
+            <p class="text">전통을 담은 한잔의 커피, 전통을 이어온 따뜻한 디저트&푸드 보다 완전한 서비스를 위해</p>
+          </div>
+          <div class="swiper-slide slide_02">
+            <p class="text">이탈리아 중부 - 생두 보관의 천혜의 환경, 파스쿠찌만의 고급 브랜드 골든팩</p>
+          </div>
+          <div class="swiper-slide slide_03">
+            <p class="text">130년간 계속 이어진 파스쿠찌家의 노력은 이탈리아 정통 커피와 그 문화를 세계로 전파하는 글로벌 브랜드로 자라나게 됩니다.</p>
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+
+    <!-- pascucci_menu -->
+    <section id="pascucci_menu">
+      <div>
+        <h3 class="c_title">PASCUCCI</h3>
+        <h4 class="sub_txt">스토리를 마시는 일상, 파스쿠찌</h4>
+
+        <div class="tab_menu">
+          <input type="radio" id="tab_01" name="a" checked><label for="tab_01" class="menu_btn">시즌메뉴</label>
+          <input type="radio" id="tab_02" name="a"><label for="tab_02" class="menu_btn">인기메뉴</label>
+
+          <!-- 시즌메뉴 슬라이드 -->
+          <div class="season_m">
+            <div class="swiper mySwiper2">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <ul>
+                    <li class="m_img"><a href="#none" title="시즌메뉴"><img src="./images/season_01.jpg" alt="시즌메뉴"></a></li>
+                    <li class="menu_t"><a href="#none">딸기카카오쉐이크</a></li>
+                    <li class="price"><a href="#none">6,500원</a></li>
+                  </ul>
+                </div>
+                <div class="swiper-slide">
+                  <ul>
+                    <li class="m_img"><a href="#none" title="시즌메뉴"><img src="./images/season_02.jpg" alt="시즌메뉴"></a></li>
+                    <li class="menu_t"><a href="#none">딸기카카오쉐이크</a></li>
+                    <li class="price"><a href="#none">6,500원</a></li>
+                  </ul>
+                </div>
+                <div class="swiper-slide">
+                  <ul>
+                    <li class="m_img"><a href="#none" title="시즌메뉴"><img src="./images/season_04.jpg" alt="시즌메뉴"></a></li>
+                    <li class="menu_t"><a href="#none">딸기카카오쉐이크</a></li>
+                    <li class="price"><a href="#none">6,500원</a></li>
+                  </ul>
+                </div>
+                <div class="swiper-slide">
+                  <ul>
+                    <li class="m_img"><a href="#none" title="시즌메뉴"><img src="./images/season_05.jpg" alt="시즌메뉴"></a></li>
+                    <li class="menu_t"><a href="#none">딸기카카오쉐이크</a></li>
+                    <li class="price"><a href="#none">6,500원</a></li>
+                  </ul>
+                </div>
+                <div class="swiper-slide">
+                  <ul>
+                    <li class="m_img"><a href="#none" title="시즌메뉴"><img src="./images/season_06.jpg" alt="시즌메뉴"></a></li>
+                    <li class="menu_t"><a href="#none">딸기카카오쉐이크</a></li>
+                    <li class="price"><a href="#none">6,500원</a></li>
+                  </ul>
+                </div>
+                <div class="swiper-slide">
+                  <ul>
+                    <li class="m_img"><a href="#none" title="시즌메뉴"><img src="./images/season_08.jpg" alt="시즌메뉴"></a></li>
+                    <li class="menu_t"><a href="#none">딸기카카오쉐이크</a></li>
+                    <li class="price"><a href="#none">6,500원</a></li>
+                  </ul>
+                </div>
+                <div class="swiper-slide">
+                  <ul>
+                    <li class="m_img"><a href="#none" title="시즌메뉴"><img src="./images/season_09.jpg" alt="시즌메뉴"></a></li>
+                    <li class="menu_t"><a href="#none">딸기카카오쉐이크</a></li>
+                    <li class="price"><a href="#none">6,500원</a></li>
+                  </ul>
+                </div>
+                <div class="swiper-slide">
+                  <ul>
+                    <li class="m_img"><a href="#none" title="시즌메뉴"><img src="./images/season_10.jpg" alt="시즌메뉴"></a></li>
+                    <li class="menu_t"><a href="#none">딸기카카오쉐이크</a></li>
+                    <li class="price"><a href="#none">6,500원</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+          </div>
+          <!-- 인기메뉴 슬라이드 -->
+          <div class="hit_m">
+            <div class="swiper mySwiper3">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <ul>
+                  <li class="m_img"><a href="#none" title="인기메뉴"><img src="./images/hit_01.jpg" alt="인기메뉴"></a></li>
+                  <li class="menu_t"><a href="#none">딸기카카오쉐이크</a></li>
+                    <li class="price"><a href="#none">6,500원</a></li>
+                  </ul>
+                </div>
+                <div class="swiper-slide">
+                  <ul>
+                  <li class="m_img"><a href="#none" title="인기메뉴"><img src="./images/hit_02.jpg" alt="인기메뉴"></a></li>
+                  <li class="menu_t"><a href="#none">딸기카카오쉐이크</a></li>
+                    <li class="price"><a href="#none">6,500원</a></li>
+                  </ul>
+                </div>
+                <div class="swiper-slide">
+                  <ul>
+                  <li class="m_img"><a href="#none" title="인기메뉴"><img src="./images/hit_03.png" alt="인기메뉴"></a></li>
+                  <li class="menu_t"><a href="#none">딸기카카오쉐이크</a></li>
+                    <li class="price"><a href="#none">6,500원</a></li>
+                  </ul>
+                </div>
+                <div class="swiper-slide">
+                  <ul>
+                  <li class="m_img"><a href="#none" title="인기메뉴"><img src="./images/hit_04.png" alt="인기메뉴"></a></li>
+                  <li class="menu_t"><a href="#none">딸기카카오쉐이크</a></li>
+                    <li class="price"><a href="#none">6,500원</a></li>
+                  </ul>
+                </div>
+                <div class="swiper-slide">
+                  <ul>
+                  <li class="m_img"><a href="#none" title="인기메뉴"><img src="./images/hit_05.jpg" alt="인기메뉴"></a></li>
+                  <li class="menu_t"><a href="#none">딸기카카오쉐이크</a></li>
+                    <li class="price"><a href="#none">6,500원</a></li>
+                  </ul>
+                </div>
+                <div class="swiper-slide">
+                  <ul>
+                  <li class="m_img"><a href="#none" title="인기메뉴"><img src="./images/hit_06.jpg" alt="인기메뉴"></a></li>
+                  <li class="menu_t"><a href="#none">딸기카카오쉐이크</a></li>
+                    <li class="price"><a href="#none">6,500원</a></li>
+                  </ul>
+                </div>
+                <div class="swiper-slide">
+                  <ul>
+                  <li class="m_img"><a href="#none" title="인기메뉴"><img src="./images/hit_07.png" alt="인기메뉴"></a></li>
+                  <li class="menu_t"><a href="#none">딸기카카오쉐이크</a></li>
+                    <li class="price"><a href="#none">6,500원</a></li>
+                  </ul>
+                </div>
+                <div class="swiper-slide">
+                  <ul>
+                  <li class="m_img"><a href="#none" title="인기메뉴"><img src="./images/hit_09.jpg" alt="인기메뉴"></a></li>
+                  <li class="menu_t"><a href="#none">딸기카카오쉐이크</a></li>
+                    <li class="price"><a href="#none">6,500원</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="more_btn"><a href="#none" title="더보기">더보기</a></div>
+    </section>
+
+    <!-- event -->
+    <section id="event">
+      <div class="event_wrap">
+        <h3 class="c_title">EVENT</h3>
+        <h4 class="sub_txt">특별한 혜택으로 카페 파스쿠찌를 경험하세요.</h4>
+        <!-- 이벤트 슬라이드 -->
+        <div class="event_cont">
+          <div class="swiper mySwiper4">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <ul>
+                  <li><a href="#none" title="뉴스"><img src="./images/event_08.jpg" alt=""></a></li>
+                  <li><a href="#none" title="뉴스"><img src="./images/event_07.jpg" alt=""></a></li>
+                  <li><a href="#none" title="뉴스"><img src="./images/event_09.jpg" alt=""></a></li>
+                </ul>
+              </div>
+              <div class="swiper-slide">
+                <ul>
+                  <li><a href="#none" title="뉴스"><img src="./images/event_10.jpg" alt=""></a></li>
+                  <li><a href="#none" title="뉴스"><img src="./images/event_05.jpg" alt=""></a></li>
+                  <li><a href="#none" title="뉴스"><img src="./images/event_06.jpg" alt=""></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+        <div class="more_btn"><a href="#none" title="더보기">더보기</a></div>
+      </div>
+    </section>
+
+    <!-- news -->
+    <section id="news">
+      <h3 class="c_title">NEWS</h3>
+      <h4 class="sub_txt">파스쿠찌 커피와 철학을 들려드립니다.</h4>
+      <div class="news_cont">
+        <article>
+          <div class="img_box"><a href="#none" title="뉴스 바로가기"><img src="./images/news1.jpg" alt="뉴스 바로가기"></a></div>
+          <div class="article_wrap">
+            <a href="#none" title="뉴스 바로가기"><h5 class="news_title">장애인 바리스타를 응원하는 파스쿠찌 재능나눔</h5></a>
+            <a href="#none" title="뉴스 바로가기"><p class="news_txt">파스쿠찌가 장애인 바리스타분들을 위해 나서고 있는 사회공헌 프로그램이 바로 ‘행복한 바리스타 아카데미’</p></a>
+            <p class="date">24.04.04</p>
+          </div>
+        </article>
+        <article>
+          <div class="img_box"><a href="#none" title="뉴스 바로가기"><img src="./images/news2.jpg" alt="뉴스 바로가기"></a></div>
+          <div class="article_wrap">
+            <a href="#none" title="뉴스 바로가기"><h5 class="news_title">장애인 바리스타를 응원하는 파스쿠찌 재능나눔</h5></a>
+            <a href="#none" title="뉴스 바로가기"><p class="news_txt">파스쿠찌가 장애인 바리스타분들을 위해 나서고 있는 사회공헌 프로그램이 바로 ‘행복한 바리스타 아카데미’</p></a>
+            <p class="date">24.04.04</p>
+          </div>
+        </article>
+        <article>
+          <div class="img_box"><a href="#none" title="뉴스 바로가기"><img src="./images/news3.jpg" alt="뉴스 바로가기"></a></div>
+          <div class="article_wrap">
+            <a href="#none" title="뉴스 바로가기"><h5 class="news_title">장애인 바리스타를 응원하는 파스쿠찌 재능나눔</h5></a>
+            <a href="#none" title="뉴스 바로가기"><p class="news_txt">파스쿠찌가 장애인 바리스타분들을 위해 나서고 있는 사회공헌 프로그램이 바로 ‘행복한 바리스타 아카데미’</p></a>
+            <p class="date">24.04.04</p>
+          </div>
+        </article>
+        <article>
+          <div class="img_box"><a href="#none" title="뉴스 바로가기"><img src="./images/news4.png" alt="뉴스 바로가기"></a></div>
+          <div class="article_wrap">
+            <a href="#none" title="뉴스 바로가기"><h5 class="news_title">장애인 바리스타를 응원하는 파스쿠찌 재능나눔</h5></a>
+            <a href="#none" title="뉴스 바로가기"><p class="news_txt">파스쿠찌가 장애인 바리스타분들을 위해 나서고 있는 사회공헌 프로그램이 바로 ‘행복한 바리스타 아카데미’</p></a>
+            <p class="date">24.04.04</p>
+          </div>
+        </article>
+      </div>
+      <div class="more_btn"><a href="#none" title="더보기">더보기</a></div>
+    </section>
+
+    <section id="pascucci">
+      <h3 class="c_title">PASCUCCI</h3>
+      <h4 class="sub_txt">130년간 계속 이어진 파스쿠찌의 노력</h4>
+
+      <div class="content_wrap">
+        <div id="fran">
+          <div class="fran_wrap">
+            <div class="fran_border"></div>
+            <div class="img_box">
+              <a href="#none" title="가맹사업바로가기">
+                <img src="./images/ico_fran.png" alt="가맹사업 바로가기">
+              </a>
+            </div>
+            <div class="text_box">
+              <a href="#none" title="가맹사업바로가기">FRANCHISE BUINESS<br>가맹사업</a>
+            </div>
+          </div>
+          <div class="fran_text">
+            <div class="tri"></div>
+            <p>국내 고객의 사랑에 힘입어 파스쿠찌는 한국 시장에 성공적으로 안착했습니다. 이제는 파스쿠찌를 사랑해주는 고객분들께 정통 이탈리아 에스프레소를 한국에 소개하는 것을 넘어, 한국 파스쿠찌만의 독창성을 가진 커피 전문점이 되고자 합니다.그래서 한국 시장에서 더 오래도록 사랑받는 브랜드가 되도록 하겠습니다.</p>            
+          </div>
+        </div>
+  
+        <div id="recru">
+          <div class="recru_wrap">
+            <div class="recru_border"></div>
+            <div class="img_box">
+              <a href="#none" title="채용바로가기">
+                <img src="./images/ico_recru.png" alt="채용바로가기">
+              </a>
+            </div>
+            <div class="text_box">
+              <a href="#none" title="채용바로가기">RECRUITMENT<br>채용</a>
+            </div>
+          </div>
+          <div class="recru_text">
+            <div class="tri"></div>
+            <p>우리는 현장 중심의 실행력과 전문성을 갖춘 인재를 지향합니다. 파스쿠찌가 추구하는 인재는 Global No.1 ‘GREAT FOOD COMPANY’ 안에서 함께 성장해 나가게 됩니다. 그리고 글로벌 성장을 견인할 리더와 현장 전문가의 육성을 위해 분야별로 다양한 교육을 지원하고 있습니다.</p>
+          </div>
+        </div>
+        
+        <div id="story">
+          <div class="story_wrap">
+            <div class="story_border"></div>
+            <div class="img_box">
+              <a href="#none" title="파스쿠찌 스토리 바로가기">
+                <img src="./images/ico_story.png" alt="파스쿠찌 스토리 바로가기">
+              </a>
+            </div>
+            <div class="text_box">
+              <a href="#none" title="파스쿠찌 스토리 바로가기">PASCUCCI STORY<br>파스쿠찌 스토리</a>
+            </div>
+          </div>
+          <div class="story_text">
+            <div class="tri"></div>
+            <p>1883년, 파스쿠찌의 이야기가 시작되었습니다. 그후 130년간 계속 이어진 파스쿠찌가의 노력은 이탈리아 정통 커피와 그 문화를 세계로 전파하는 글로벌 브랜드로 자라나게 됩니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+    <!-- top버튼 -->
+  <div id="top_btn"><a href="#header" title="최상단바로가기"><i class="fa-solid fa-arrow-up"></i></a></div>
+
+  <!-- 푸터영역 시작 -->
+  <footer>
+    <div class="f_top">
+      <div class="f_top_wraper">
+        <div class="f_top_wrap">
+          <ul class="f_top_l">
+            <li><a href="#none" title="기업 및 단체구매">기업 및 단체구매</a></li>
+            <li><a href="#none" title="협력제안">협력제안</a></li>
+            <li><a href="#none" title="가맹상담">가맹상담</a></li>
+            <li><a href="#none" title="사이버신문고">사이버신문고</a></li>
+          </ul>
+          <ul class="f_top_r">
+            <li>Address</li>
+            <li>경기도 00시 00구 0000로 00번길 00 (주) 파0크0상</li>
+            <li>고객상담센터</li>
+            <li>080 - 000 - 2024</li>
+          </ul>
+        </div>
+        <select name="siteurl" id="url" onchange="siteUrl(a)">
+          <option value="#none">패밀리사이트 바로가기</option>
+          <option value="#none">베스킨라빈스31</option>
+          <option value="#none">던킨도너츠</option>
+          <option value="#none">파리크라상</option>
+          <option value="#none">해피콘</option>
+          <option value="#none">SPC 그룹</option>
+        </select>
+      </div>
+    </div>
+    <div class="f_bottom">
+      <div class="f_bottom_l">
+        <ul>
+          <li><a href="#none" title="이용약관">이용약관</a></li>
+          <li><a href="#none" title="개인정보처리방침">개인정보처리방침</a></li>
+          <li><a href="#none" title="해피포인트">해피포인트</a></li>
+          <li><a href="#none" title="거래희망사건등록">거래희망사건등록</a></li>
+          <li>사업자등록번호 :  129-00-00044</li>
+        </ul>
+        <address>ALL RIGHTS RESERVED ⓒ 2024 THE PASCUCCI, PARIS CROISSANT CO., LTD.</address>
+      </div>
+      <div class="f_bottom_r">
+        <h1><img src="./images/logo.png" alt="하단로고"></h1>
+      </div>
+    </div>
+  </footer>
+
+
+
+<script>
+  //header 색깔변경
+  const gnb = document.getElementById('gnb');
+  const h_top = document.getElementById('h_top');
+  const header = document.getElementById('header');
+
+  gnb.addEventListener('mouseover', function(){
+    header.style.backgroundColor='#211613';
+  });    
+
+  gnb.addEventListener('mouseout', function(){
+    header.style.backgroundColor='rgba(0,0,0,0)';
+  });
+
+  // top버튼
+  var btt = document.getElementById('top_btn'),
+      docElem = document.documentElement,
+      offset,
+      scrollPos,
+      docHeight;
+  // docHeight = docElem.scrollHeight;
+  docHeight = Math.max(docElem.offsetHeight, docElem.scrollHeight);
+  if(docHeight != 0){
+    offset = docHeight / 12;
+  }
+
+  window.addEventListener('scroll', function(){
+    scrollPos = docElem.scrollTop;
+    console.log(scrollPos);
+
+    // btt.className = (scrollPos > offset) ? 'visible' : '';
+    if(scrollPos > offset){
+      btt.className = 'visible';
+    }else{
+      btt.className = '';
+    }
+  });
+</script>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    // 메인비주얼 슬라이드
+    var swiper = new Swiper(".mySwiper", {
+      cssMode: true,
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: "true",
+      },
+    });
+
+    // 시즌메뉴 슬라이드
+    var swiper2 = new Swiper(".mySwiper2", {
+      slidesPerView: 4,
+      spaceBetween: 0,
+      loop: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+
+    // 인기메뉴 슬라이드
+    var swiper3 = new Swiper(".mySwiper3", {
+      slidesPerView: 4,
+      spaceBetween: 0,
+      loop: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+
+    // 이벤트 슬라이드
+    var swiper4 = new Swiper(".mySwiper4", {
+      spaceBetween: 30,
+      loop: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+    
+  </script>
+</body>
+</html>
