@@ -49,7 +49,7 @@ a{
 /* 레이아웃 */
 #pascucci_menu, .event_wrap, #news, #pascucci{
   width: 1200px;
-  margin: 80px auto;
+  margin: 90px auto;
   text-align: center;
 }
 
@@ -98,7 +98,8 @@ a{
 /* ***************************** */
 
 /* header 서식 */
-header{transition: 0.5s; width: 100%;top: 0; z-index: 888; position: absolute;}
+header{transition: 0.5s; width: 100%;top: 0; z-index: 888; position: fixed;}
+.black_bg{background-color: var(--main_color02);}
 header > .h_top{
   width: 1400px;
   margin: 0 auto;
@@ -191,6 +192,7 @@ header > #h_bottom > #gnb .sub a:hover{
   border-radius: 26px;
   border: none;
   color: var(--sub_color01);
+  text-indent: 10px;
 }
 #search_box > input::placeholder{
   color: var(--sub_color01);
@@ -234,6 +236,7 @@ footer a{
   color: var(--sub_color01);
   font-size: var(--font_size16);
 }
+footer a:hover{text-decoration: underline;}
 
 .f_top{
   border-bottom: 1px solid var(--main_color01);

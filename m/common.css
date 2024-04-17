@@ -318,6 +318,9 @@ header > h1 img{
 /* 3. 파스쿠찌 메뉴 */
 .tab_menu{text-align: center;}
 /* 탭버튼 디자인 */
+#pascucci_menu{
+  padding: 50px 0px;
+}
 #pascucci_menu .menu_btn{
   display: inline-block;
   width: 100px;
